@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+.env
+firebase-key.json
+dist/
+build/
+.vscode/
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+
+# Editor folders
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Vite cache
+.cache/
+.vite/
+
+# Dependency directories
+.pnpm/
+.yarn/
+.next/
+out/
+
+# Coverage
+coverage/
+
+# Firebase emulators e configs locais
+firebase-debug.log
+firestore-debug.log
