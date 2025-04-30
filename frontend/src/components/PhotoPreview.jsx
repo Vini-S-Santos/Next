@@ -1,33 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Frame from '../assets/FramePhoto.svg';
 
 export default function PhotoPreview({ url, onRetake, onApprove }) {
-  useEffect(() => {
-    console.log("aqui");
-  }, []);
-
   return (
-    <div className="h-screen w-full bg-gradient-to-br from-white to-gray-400 flex flex-col items-center justify-between relative">
-      <div className="relative w-full h-full flex items-center justify-center">
-        <img src={url} alt="Foto capturada" className="absolute w-full h-full object-cover" />
+    <div className="h-screen w-full bg-gradient-to-br from-white to-gray-400 flex flex-col items-center justify-center relative">
+      <div className="relative w-[887px] h-[1576.89px]">
+        <div className="absolute z-10 left-[2px] top-[218px] w-[882px] h-[1258px] overflow-hidden">
+          <img
+            src={url}
+            alt="Foto capturada"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         <img
           src={Frame}
           alt="Moldura"
-          className="absolute w-full h-full object-cover pointer-events-none"
+          className="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none"
         />
       </div>
 
-      <div className="absolute bottom-8 w-full px-6 flex justify-between gap-6">
+      <div className="mt-8 flex gap-4 w-[887px] justify-center">
         <button
           onClick={onRetake}
-          className="w-1/2 border border-gray-500 py-4 text-lg font-semibold text-gray-700 bg-white"
+          className="flex-1 max-w-[411.5px] h-[131px] px-[40px] py-[32px] border-[8px] border-[#606060] text-[56px] leading-[67px] font-bold font-['Titillium Web'] text-[#606060] text-center flex items-center justify-center"
         >
           Refazer
         </button>
         <button
           onClick={onApprove}
-          className="w-1/2 bg-gray-700 py-4 text-lg font-semibold text-white"
+          className="flex-1 max-w-[411.5px] h-[131px] px-[40px] py-[32px] bg-[#606060] text-white text-[56px] leading-[67px] font-bold font-['Titillium Web'] text-center flex items-center justify-center"
         >
           Continuar
         </button>
