@@ -11,6 +11,7 @@ function App() {
   const [photoURL, setPhotoURL] = useState('');
   const webcamRef = useRef(null);
   const [isCounting, setIsCounting] = useState(false);
+  const [finalUrl, setFinalUrl] = useState('');
 
   const handleStart = () => {
     setStep('loading');
@@ -42,18 +43,21 @@ function App() {
         <PhotoPreview
           url={photoURL}
           onRetake={() => setStep('camera')}
-          onApprove={() => setStep('final')}
+          onApprove={(url) => {
+            setFinalUrl(url);
+            setStep('final');
+          }}
         />
       )}
       {step === 'final' && (
         <FinalScreen
-          url={photoURL}
+          url={finalUrl}
           onRestart={() => {
             setPhotoURL('');
+            setFinalUrl('');
             setStep('start');
           }}
-        />
-      )}
+      />)}
     </>
   );
 }
