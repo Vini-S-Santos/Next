@@ -5,7 +5,7 @@ import CameraScreen from './components/CameraScreen';
 import Countdown from './components/Countdown';
 import PhotoPreview from './components/PhotoPreview';
 import FinalScreen from './components/FinalScreen';
-import LoadingScreen from './components/LoadingScreen'; // <-- adicionado
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   const [step, setStep] = useState('start');
