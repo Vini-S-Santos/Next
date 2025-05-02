@@ -52,6 +52,7 @@ function App() {
       {step === 'final' && (
         <FinalScreen
           url={finalUrl}
+          photoUrl={photoURL}
           onRestart={() => {
             setPhotoURL('');
             setFinalUrl('');

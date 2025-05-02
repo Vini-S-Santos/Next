@@ -3,24 +3,27 @@ import logo from '../assets/NexLabLogo.svg';
 
 export default function StartScreen({ onStart }) {
   return (
-    <div className="relative w-[1080px] h-[1920px] bg-gradient-to-br from-gray-100 to-gray-300 mx-auto overflow-hidden">
-      <img
-        src={logo}
-        alt="Logo"
-        className="absolute top-[152px] left-[413px] w-[255px] h-[166px]"
-      />
+    <div className="flex items-center justify-center h-screen w-full bg-gradient-to-br from-gray-100 to-gray-300 overflow-hidden">
 
-      <div className="absolute top-[712px] left-[221px] w-[638px] h-[496px] flex flex-col justify-center items-center text-[248px] leading-[248px] font-bold font-['Titillium Web'] text-black">
-        <span>Photo</span>
-        <span>Opp</span>
+      <div className="flex flex-col items-center text-center gap-4">
+        
+        {/* Logo */}
+        <img src={logo} alt="Logo" className="w-[140px] h-auto mb-4" />
+
+        {/* Título */}
+        <div className="text-[5vw] leading-none font-bold font-['Titillium Web'] text-black">
+          <div>Photo</div>
+          <div>Opp</div>
+        </div>
+
+        {/* Botão */}
+        <button
+          onClick={onStart}
+          className="mt-4 w-[200px] py-3 text-white text-base bg-gray-700"
+        >
+          Iniciar
+        </button>
       </div>
-
-      <button
-        onClick={onStart}
-        className="absolute top-[1658px] left-[62px] w-[956px] py-[32px] px-[40px] text-white text-2xl bg-gray-700 hover:bg-gray-800 transition"
-      >
-        Iniciar
-      </button>
     </div>
   );
 }
