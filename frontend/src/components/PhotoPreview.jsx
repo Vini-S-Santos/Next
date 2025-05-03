@@ -19,7 +19,7 @@ export default function PhotoPreview({ url, onRetake, onApprove }) {
         const formData = new FormData();
         formData.append('photo', blob, 'framed-photo.png');
 
-        const response = await fetch('http://localhost:5000/upload', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/upload`, {
           method: 'POST',
           body: formData,
         });
