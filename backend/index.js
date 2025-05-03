@@ -5,7 +5,7 @@ const path = require("path");
 const fs = require("fs");
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getStorage } = require("firebase-admin/storage");
-const serviceAccount = require("./firebase-key.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
 require("dotenv").config();
 
 const app = express();
